@@ -48,7 +48,74 @@
         }
         .Contact
         {
+            padding: 5vh;
             margin: 10vh;
+            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+            background-color: white;
+        }
+        form,p,h3,label
+        {
+            background-color: white;
+            color: orangered;
+            font-style: italic;
+        }
+        label
+        {
+            font-size: 20px;
+            margin: 10px;
+            padding: 1px;
+        }
+
+        .I_N
+        {
+            font-size: 20px;
+            text-align: center;
+            font-style: italic;
+            background-color: white;
+            color: orangered;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: orangered;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button:hover {background-color: #3e8e41}
+
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        nav a:hover
+        {
+            font-style: italic;
+            color: orangered;
+        }
+        .I_N option
+        {
+            background-color: orangered;
+            color: whitesmoke;
+        }
+
+        @media all and (max-width:699px) {
+            .Contact
+            {
+                padding: 5vh;
+                margin: 10vh;
+                clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+                background-size: 100%;
+                background-color: white;
+            }
         }
     </style>
     <title>Document</title>
@@ -74,13 +141,20 @@
             </p>
             <label>User Login</label>
             <br /><br />
-            <input placeholder="Username" name = "uname" type = "text"/>
+            <input placeholder="Username" name = "uname" type = "text"class = "I_N" required/>
             <br /><br />
-            <input placeholder="Password" name = "pass" type = "text"/>
+            <input placeholder="Password" name = "pass" type = "text"class = "I_N" required/>
             <br /><br />
-            <input class="Email" name="email" type="text" placeholder="Email" />
+            <input  name="email" type="text" placeholder="Email" class = "I_N"/>
             <br /><br />
-            <input type="submit" value="Contact Now" />
+            <select name="occupation" id="Job" class = "I_N" required>
+                <option value="">Enter your occupation</option>
+                <option value="Farmer">Farmer</option>
+                <option value="service provider">service provider</option>
+                <option value="wholesaler">wholesaler</option>
+            </select>
+            <br /><br />
+            <input type="submit" value="Log in" class = "button"/>
             <br /><br />
         </form>
     </div>
