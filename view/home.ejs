@@ -6,11 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <button name='field' id = "red_b">Change User</button>
+    <button name='field' id = "change_b">Change User</button>
+    <button name='field' id = "Farm_b">My farms</button>
     <script>
-        document.getElementById('red_b').addEventListener('click', function() {
-        window.location.href = 'http://localhost:8009/login';
-    });
+        document.getElementById('change_b').addEventListener('click', function() {
+        window.location.href = 'http://localhost:8009/login';});
+        document.getElementById('Farm_b').addEventListener('click', function() {
+        window.location.href = 'http://localhost:8009/home/farms';});
     </script>
 </body>
 

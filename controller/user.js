@@ -2,7 +2,7 @@ const express = require('express');
 const {v4: uuidv4} = require('uuid');
 const {set_user, get_user} = require('../services/auth');
 const { setUser } = require('../services/auth');
-const user = require('../model/user')
+const user = require('../model/user');
 
 async function UserSignup(req, res){
     const {uname, email, pass} = req.body
@@ -12,6 +12,7 @@ async function UserSignup(req, res){
             const ses_id = uuidv4();
             setUser(ses_id, user);
             res.cookie('uid', ses_id);
+            res.cookie('email', email);
             res.redirect('/home');
         }
         else{
@@ -24,6 +25,7 @@ async function UserSignup(req, res){
             email,
             pass,
         });
+        res.cookie('email', email);
         const ses_id = uuidv4();
         setUser(ses_id, user);
         res.cookie('uid', ses_id);

@@ -7,7 +7,7 @@
     <style>
         *{
             text-align: center;
-            background-color: orangered;
+            background-color: coral;
             padding: 0;
             margin: 0;
             border: 2;
@@ -21,7 +21,7 @@
         header .MainH
         {
             color: whitesmoke;
-            background-color: orange;
+            background-color: orangered;
             clip-path: ellipse(500px 100px at center center);
             background-size: 70vh;
             text-decoration: none;
@@ -108,9 +108,17 @@
         }
 
         @media all and (max-width:699px) {
+            nav 
+            {
+                font-size: 30px;
+                margin: auto;
+                grid-template-columns: repeat(1,1fr);
+                display: grid;
+                grid-gap: 3px;
+            }
             .Contact
             {
-                padding: 5vh;
+                padding: 10vh;
                 margin: 10vh;
                 clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
                 background-size: 100%;
@@ -121,16 +129,16 @@
     <title>Document</title>
 </head>
 <body>
-    <Header>
+    <!-- <Header>
         <h2 class = "MainH">
             Main Heading
         </h2>
         <nav>
-            <a href="">About us</a>
+            <a href="">Home</a>
             <a href="">Help</a>
             <a href="">General Feature</a>
           </nav>
-    </Header>
+    </Header> -->
     <hr />
     <div class="Contact">
         <form method = "POST" action = "/login">
