@@ -1,5 +1,5 @@
 const express = require('express');
-const {add_farm} = require('../controller/farm')
+const {add_farm, predictor} = require('../controller/farm')
 const router = express.Router();
 const farm = require('../model/farm');
 
@@ -9,12 +9,13 @@ router.get('/', (req, res)=>{
 });
 router.get('/farms', async (req, res) => {
     const farms = await farm.find({email:req.cookies.email});
-    console.log(farms);
     res.render('farm', {
         farms
     });
 });
+router.get('/predict', predictor);
 
 router.post('/farms',add_farm);
+
 
 module.exports = router;

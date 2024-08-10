@@ -70,12 +70,75 @@ async function add_farm(req, res){
         revenue: revenue,
         risk:risk
     })
-    const farms = farm.find({email:email});
+    const farms = await farm.find({email:email});
     return res.render("farm",{
         farms
     });
 }
+function predictor(req, res){
+    const {crop, rainfall, soil} = req.body;
+    let revenue, risk, investment;
+    if(crop == 'wheat'){
+        investment = 1000*area;
+        risk = 10;
+        if(soil == 'black' || soil == 'alluvial'){
+            if(rainfall == 'vl'){
+                investment += 200*area;
+            }
+            else if(rainfall == 'vh'){
+                risk += 10;
+            }
+            revenue = 9000*area;
+        }
+        else{
+            if(rainfall == 'vl'){
+                investment += 200*area;
+            }
+            else if(rainfall == 'vh'){
+                risk += 10;
+            }
+            revenue = 7000*area;
+        }
+    }
+    else if(crop == 'rice'){
+        investment = 500*area;
+        risk = 10;
+        if(soil == 'alluvial'){
+            if(rainfall == 'vl'){
+                investment += 300*area;
+                risk += 10;
+            }
+            revenue = 7000*area;
+        }
+        else{
+            if(rainfall == 'vl'){
+                investment += 400*area;
+                risk += 10;
+            }
+            revenue = 6000*area;
+        }
+    }
+    else if(crop == 'potato'){
+        investment = 100*area;
+        risk = 5;
+        if(rainfall == 'vl'){
+            risk += 5;
+        }
+        if(soil == 'alluvial'){
+            revenue = 3000*area;
+        }
+        else{
+            revenue = 2000*area;
+        }
+    }
+    const array = [investment, risk, revenue];
+    return req.render('predict',{
+        array
+    });
+}
+
 
 module.exports = {
-    add_farm
+    add_farm,
+    predictor
 }
