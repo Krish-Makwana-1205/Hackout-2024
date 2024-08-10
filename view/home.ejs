@@ -4,16 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: white;
+        }
+        .main-content {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            background-color: coral;
+        }
+        header {
+            padding: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: coral;
+        }
+        nav {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 3px;
+            width: 100%;
+            background-color: white;
+        }
+        .Content {
+            flex-grow: 1;
+            background-color: coral;
+            padding: 20px;
+            margin-top: 30px;
+            overflow-y: auto;
+        }
+        aside {
+            width: 30%;
+            height: 100vh;
+            background-image: url("./images/farm.jpg");
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            right: 0;
+            top: 0;
+        }
+        nav a {
+            display: block;
+            background-color: coral;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: darkred;
+        }
+    </style>
 </head>
 <body>
-    <button name='field' id = "change_b">Change User</button>
-    <button name='field' id = "Farm_b">My farms</button>
+    <div class="main-content">
+        <header>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">Login</a>
+                <a href="#">Random</a>
+                <a href="#">Random</a>
+                <a href="#">Random</a>
+                <a href="#">Random</a>
+            </nav>
+        </header>
+        <div class="Content">
+            <h2>Website Name</h2>
+            <br /><br />
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis numquam ratione adipisci rem totam possimus illo. Quaerat voluptate quo saepe exercitationem facere odio quas nulla, minus repudiandae ullam quam quod numquam, assumenda eum magnam, id laborum repellat veniam distinctio veritatis. Ipsum magnam qui distinctio laborum, blanditiis mollitia. Minima, a ex?
+            </p>
+        </div>
+    </div>
+    <aside></aside>
     <script>
-        document.getElementById('change_b').addEventListener('click', function() {
-        window.location.href = 'http://localhost:8009/login';});
-        document.getElementById('Farm_b').addEventListener('click', function() {
-        window.location.href = 'http://localhost:8009/home/farms';});
+        document.getElementById('red_b').addEventListener('click', function() {
+            window.location.href = 'http://localhost:8009/login';
+        });
     </script>
 </body>
-
 </html>

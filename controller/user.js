@@ -5,7 +5,7 @@ const { setUser } = require('../services/auth');
 const user = require('../model/user');
 
 async function UserSignup(req, res){
-    const {uname, email, pass} = req.body
+    const {uname, email, pass, occupation} = req.body
     const z = await user.findOne({email:email});
     if(z != null){
         if(uname == z.uname && pass == z.pass){

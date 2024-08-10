@@ -14,7 +14,7 @@ const farmschema = new mongoose.Schema({
         required: true,
     },
     area:{
-        type: String,
+        type: Number,
         required: true,
     },
     soil:{
@@ -30,15 +30,15 @@ const farmschema = new mongoose.Schema({
         required: true,
     },
     investment:{
-        type: String,
+        type: Number,
         required: true,
     },
     revenue:{
-        type: String,
+        type: Number,
         required: true,
     },
     risk:{
-        type: String,
+        type: Number,
         required: true,
     }
 });
