@@ -74,40 +74,21 @@
             margin-left: 160px;
         }
     </style>
-    <div class="fir">
-        <div id="fonty">Add Service</div>
-    </div>
-    <div class="block">
-        <br />
-        <form method='post' action="/home/service/exchange">
-            <input placeholder="service_name" name="name" type="text" class="ip" />
-            <span class="gap"></span>
-            <input placeholder="costperhour" name="cost" type="text" class="ip" />
-            <input placeholder="provider_name" name="prov_name" type="text" class="ip" />
-            <br />
-            <input type="submit" value="submit" class="btn btn-success" id="subbtn" />
-        </form>
-    </div>
-    <div class="fir">
-        <div id="fonty">Your Services</div>
-    </div>
-    <% services.forEach(service=> { %>
+    <% sales.forEach(wholesale=> { %>
         <div class="grim">
-            <div class="show">name :- <%=service.name%>
+            <div class="show">Buyer :- <%=wholesale.buy_name%>
             </div>
-            <div class="show">hourlycost :- <%=service.cost%>
+            <div class="show">Crop :- <%=wholesale.crop%>
             </div>
-            <div class="show">service provider :- <%=service.prov_name%>
+            <div class="show">Weight :- <%=wholesale.weight%>
             </div>
-            <div class="show">contact :- <%=service.email%>
+            <div class="show">Price :- <%=wholesale.price%>
             </div>
         </div>
         <% }) %>
-
-
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

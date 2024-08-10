@@ -16,6 +16,9 @@ async function UserSignup(req, res){
             if(occupation == "service provider"){
                 return res.redirect('/home/service');
             }
+            else if(occupation == "wholesaler"){
+                return res.redirect('/home/wholesale');
+            }
             res.redirect('/home');
         }
         else{
@@ -35,6 +38,9 @@ async function UserSignup(req, res){
         res.cookie('uid', ses_id);
         if(occupation == "service provider"){
             return res.redirect('/home/service');
+        }
+        else if(occupation == "wholesaler"){
+            return res.redirect('/home/wholesale');
         }
         res.redirect('/home');
     }

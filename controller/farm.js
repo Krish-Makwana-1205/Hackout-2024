@@ -76,7 +76,7 @@ async function add_farm(req, res){
     });
 }
 function predictor(req, res){
-    const {crop, rainfall, soil} = req.body;
+    const {crop, rainfall, soil, area} = req.body;
     let revenue, risk, investment;
     if(crop == 'wheat'){
         investment = 1000*area;
@@ -131,8 +131,8 @@ function predictor(req, res){
             revenue = 2000*area;
         }
     }
-    const array = [investment, risk, revenue];
-    return req.render('predict',{
+    let array = [investment, risk, revenue];
+    return res.render('predict',{
         array
     });
 }

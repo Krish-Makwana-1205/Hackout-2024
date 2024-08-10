@@ -103,14 +103,14 @@
     </header>
 
     <div>
-      <h1>Pridictor</h1>
+      <h1>Predictor</h1>
       <br /><br />
       <h3>Inputs fom User</h3>
       <p>
-        To prict anythig first we need some information on wich the prediction
+        To predict anythig first we need some information on wich the prediction
         will depend
       </p>
-      <form action="POST">
+      <form method="POST" action="/home/predict">
         <br /><br />
         <input
           placeholder="farm area(hectares)"
@@ -145,13 +145,12 @@
         <input type="submit" value="submit" class="button" />
       </form>
       <h3>Output</h3>
-      <form method="POST" action="home/predict">
-        <h4>Investment required : -1</h4>
-        <br /><br />
-        <h4>Revenue : -1</h4>
-        <br /><br />
-        <h4>Risk Pridiction : -1</h4>
-      </form>
+      <%if(locals.array){%>
+        <h4>Investment required :<%=array[0]%></h4>
+        <h4>Revenue earned :<%=array[2]%></h4>
+        <h4>Risk :<%=array[1]%></h4>
+      <%}%>
+      
     </div>
   </body>
 </html>
