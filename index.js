@@ -7,13 +7,19 @@ const dburl = 'mongodb://localhost:27017/hackout';
 const cookieParser = require('cookie-parser')
 const {mongoconnect} = require('./connect');
 const app = express();
+const {usercheck} = require('./middleware/Islogged')
+
+
 app.listen(PORT, ()=>{
     console.log('Ears up');
 });
+
+
+
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/login',login);
-app.use('/', home);
+app.use('/home',usercheck, home);
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./view"));
 

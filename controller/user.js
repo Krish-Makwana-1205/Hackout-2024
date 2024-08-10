@@ -6,12 +6,29 @@ const user = require('../model/user')
 
 async function UserSignup(req, res){
     const {uname, email, pass} = req.body
-    await user.create({
-        uname, 
-        email,
-        pass,
-    });
-    res.redirect('/');
+    const z = await user.findOne({email:email});
+    if(z != null){
+        if(uname == z.uname && pass == z.pass){
+            const ses_id = uuidv4();
+            setUser(ses_id, user);
+            res.cookie('uid', ses_id);
+            res.redirect('/home');
+        }
+        else{
+            res.redirect('/login');
+        }
+    }
+    else{
+        await user.create({
+            uname, 
+            email,
+            pass,
+        });
+        const ses_id = uuidv4();
+        setUser(ses_id, user);
+        res.cookie('uid', ses_id);
+        res.redirect('/home');
+    }
 }
 
 async function UserLogin(req, res){

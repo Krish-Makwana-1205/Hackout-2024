@@ -6,6 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>HI</h1>
+    <button name='field' id = "red_b">Change User</button>
+    <script>
+        document.getElementById('red_b').addEventListener('click', function() {
+        window.location.href = 'http://localhost:8009/login';
+    });
+    </script>
 </body>
+
 </html>
