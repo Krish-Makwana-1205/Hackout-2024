@@ -4,18 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" type="text/css" href = "login.css">
+    <style>
+        *{
+            text-align: center;
+            background-color: orangered;
+            padding: 0;
+            margin: 0;
+            border: 2;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header .MainH
+        {
+            color: whitesmoke;
+            background-color: orange;
+            clip-path: ellipse(500px 100px at center center);
+            background-size: 70vh;
+            text-decoration: none;
+            font-style: italic;
+            text-shadow:5px 7px 2px yellowgreen ;
+            font-size: 100px;
+            font-weight: 700;
+        }
+        nav
+        {
+            font-size: 35px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 3px;
+        }
+
+        nav a{
+            font-style: italic;
+
+            color: white;
+            background-color: black;
+            text-decoration: none;
+        }
+        .Contact
+        {
+            margin: 10vh;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    <form method = "POST" action = "/login">
-        <label>User Login</label>
-        <input placeholder="Username" name = "uname" type = "text"/>
-        <input placeholder="Password" name = "pass" type = "text"/>
-        <input placeholder="email" name = "email" type = "text"/>
-        <button type = 'submit'>Generate</button>
-    </form>
-    <style>
-        
-    </style>
+    <Header>
+        <h2 class = "MainH">
+            Main Heading
+        </h2>
+        <nav>
+            <a href="">About us</a>
+            <a href="">Help</a>
+            <a href="">General Feature</a>
+          </nav>
+    </Header>
+    <hr />
+    <div class="Contact">
+        <form method = "POST" action = "/login">
+            <p>
+                <h3>
+                    Provide some basic information about yourself
+                </h3>
+            </p>
+            <label>User Login</label>
+            <br /><br />
+            <input placeholder="Username" name = "uname" type = "text"/>
+            <br /><br />
+            <input placeholder="Password" name = "pass" type = "text"/>
+            <br /><br />
+            <input class="Email" name="email" type="text" placeholder="Email" />
+            <br /><br />
+            <input type="submit" value="Contact Now" />
+            <br /><br />
+        </form>
+    </div>
 </body>
 </html>
