@@ -27,6 +27,10 @@ router.get('/service/exchange', async (req, res) =>{
         services
     });
 })
+router.get('/predict', async (req, res) => {
+    res.render('predict');
+})
+
 
 router.post('/predict', predictor);
 router.post('/farms', add_farm);
