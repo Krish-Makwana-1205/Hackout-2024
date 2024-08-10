@@ -13,9 +13,13 @@ async function UserSignup(req, res){
             setUser(ses_id, user);
             res.cookie('uid', ses_id);
             res.cookie('email', email);
+            if(occupation == "service provider"){
+                return res.redirect('/home/service');
+            }
             res.redirect('/home');
         }
         else{
+
             res.redirect('/login');
         }
     }
@@ -29,6 +33,9 @@ async function UserSignup(req, res){
         const ses_id = uuidv4();
         setUser(ses_id, user);
         res.cookie('uid', ses_id);
+        if(occupation == "service provider"){
+            return res.redirect('/home/service');
+        }
         res.redirect('/home');
     }
 }

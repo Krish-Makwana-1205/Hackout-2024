@@ -1,0 +1,157 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        background-color: wheat;
+      }
+      header {
+        background-color: coral;
+        float: left;
+        width: 30%;
+        position: fixed;
+        height: 100%;
+      }
+      nav {
+        background-color: coral;
+        margin: 5px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, auto);
+      }
+      nav a {
+        font-size: 25px;
+        font-style: italic;
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        padding: 7px;
+        text-decoration: none;
+      }
+      div {
+        float: right;
+        width: 69%;
+        font-weight: 800;
+        text-align: center;
+      }
+      div h1,
+      div h3 {
+        font-style: italic;
+        margin: 10px;
+        color: white;
+      }
+      form {
+        padding: 10px;
+        background-color: coral;
+        font-size: 20px;
+      }
+      form input,
+      form select {
+        color: white;
+        font-style: italic;
+        font-size: 15px;
+        padding: 7px;
+      }
+      h4{
+        background-color: coral;
+        color: white;
+      }
+      .button {
+        display: inline-block;
+        padding: 15px 25px;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: orangered;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+      }
+
+      .button:hover {
+        background-color: #3e8e41;
+      }
+
+      .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+      nav a:hover {
+        background-color: orangered;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="http://localhost:8009/login">Change User </a>
+        <a href="http://localhost:8009/home/farms">farms</a>
+        <a href="#">Random</a>
+        <a href="#">Random</a>
+        <a href="#">Random</a>
+        <a href="#">Random</a>
+      </nav>
+    </header>
+
+    <div>
+      <h1>Pridictor</h1>
+      <br /><br />
+      <h3>Inputs fom User</h3>
+      <p>
+        To prict anythig first we need some information on wich the prediction
+        will depend
+      </p>
+      <form action="POST">
+        <br /><br />
+        <input
+          placeholder="farm area(hectares)"
+          name="area"
+          type="text"
+          class="ip"
+        />
+        <br /><br />
+        <select name="soil" required class="ip">
+          <option value="">soil</option>
+          <option value="black">Black</option>
+          <option value="alluvial">Alluvial</option>
+          <option value="red">red</option>
+        </select>
+        <br /><br />
+        <select name="rainfall" required class="ip">
+          <option value="">Rainfall</option>
+          <option value="vl">0-100</option>
+          <option value="l">100-200</option>
+          <option value="m">200-300</option>
+          <option value="h">300-400</option>
+          <option value="vh">above 400</option>
+        </select>
+        <br /><br />
+        <select name="crop" required class="ip">
+          <option value="">Crop</option>
+          <option value="wheat">Wheat</option>
+          <option value="rice">Rice</option>
+          <option value="potato">potato</option>
+        </select>
+        <br /><br />
+        <input type="submit" value="submit" class="button" />
+      </form>
+      <h3>Output</h3>
+      <form action="POST">
+        <h4>Investment required : -1</h4>
+        <br /><br />
+        <h4>Revenue : -1</h4>
+        <br /><br />
+        <h4>Risk Pridiction : -1</h4>
+      </form>
+    </div>
+  </body>
+</html>
