@@ -51,8 +51,10 @@ router.get('/wholesale/exchange', async(req, res)=>{
 })
 router.get('/alldeals', async(req, res)=>{
     const sales = await wholesale.find({});
+    const emails = req.cookies.email
     return res.render('alldeals',{
-        sales
+        sales,
+        emails
     })
 })
 
